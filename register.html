@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Pure CSS3 crossfade image animation</title>
+    <meta name="description" content="An image crossfade animation done with CSS3">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="register_css/slidingbackground.css">
+    <link rel="stylesheet" href="register_css/register1.css">
+    <link rel="stylesheet" href="cssfile.css">
+    <link rel="stylesheet" href="dropdown.css">
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+
+
+  </head>
+  <body>
+    
+    <div class="crossfade">
+      <figure></figure>
+      <figure></figure>
+      <figure></figure>
+      <figure></figure>
+    </div>
+
+    <header>
+      <div id="logo">
+        <a href="home.html">HIGHWAY<span id="logo-s">SERVICES</span></a>
+      </div>
+      <span class="sign"><a href="#">CONTACT US</a></span>
+      <span class="sign"><a href="aboutus.html">ABOUT US</a></span>
+      <span class="sign"><a  href="register.html">SIGN UP</a></span>
+      <span class="sign"><a href="login.html">SIGN IN</a></span>
+      <span class="sign"><a href="home.html">HOME</a></span>
+          <span class="sign">
+        <div class="dropdown">
+          <a href="readmore.html#SERVICES">
+            <button class="dropbtn">SERVICES</button></a>
+            <div class="dropdown-content">
+              <a href="readmore.html#SERVICES">Towing</a>
+              <a href="readmore.html#SERVICES">Jump Start</a>
+              <a href="readmore.html#SERVICES">Flat Tyre</a>
+              <a href="readmore.html#SERVICES">Lockout </a>
+              <a href="readmore.html#SERVICES">Fuel Delivery</a>
+            </div>
+          </div>
+      </span>
+    </header>
+  
+
+  <div class="center">
+
+    <div class="form">
+      <input type="button" onclick="window.location.href='userregister.html';" value="USER REGISTRATION" />
+    </div>
+     
+      <div class="form">
+        <input type="button" onclick="window.location.href='mechanicregister.html';" value="MECHANIC REGISTRATION" />
+      </div>
+
+      <div class="signup_link">
+        Already a member? <a href="login.html">login</a>
+      </div>
+
+
+      
+
+
+  </div>
+  
+
+  </body>
+</html>
