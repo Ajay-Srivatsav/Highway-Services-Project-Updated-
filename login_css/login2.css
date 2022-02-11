@@ -1,0 +1,11 @@
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+
+/* Position the navbar container inside the image */
+.container {
+  position: absolute;
+  margin: 40px;
+  width: auto;
+}
+
