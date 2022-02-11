@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Pure CSS3 crossfade image animation</title>
+    <meta name="description" content="An image crossfade animation done with CSS3">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="register_css/slidingbackground.css">
+    <link rel="stylesheet" href="register_css/register1.css">
+    <link rel="stylesheet" href="cssfile.css">
+    <link rel="stylesheet" href="dropdown.css">
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+  </head>
+  <body onload="select()">
+    <div class="crossfade">
+      <figure></figure>
+      <figure></figure>
+      <figure></figure>
+      <figure></figure>
+    </div>
+    <header>
+      <div id="logo">
+        <a href="home.html">HIGHWAY<span id="logo-s">SERVICES</span></a>
+      </div>
+      <span class="sign"><a href="#">CONTACT US</a></span>
+      <span class="sign"><a href="aboutus.html">ABOUT US</a></span>
+      <span class="sign"><a  href="register.html">SIGN UP</a></span>
+      <span class="sign"><a href="login.html">SIGN IN</a></span>
+      <span class="sign"><a href="home.html">HOME</a></span>
+          <span class="sign">
+        <div class="dropdown">
+          <a href="readmore.html#SERVICES">
+            <button class="dropbtn">SERVICES</button></a>
+            <div class="dropdown-content">
+              <a href="readmore.html#SERVICES">Towing</a>
+              <a href="readmore.html#SERVICES">Jump Start</a>
+              <a href="readmore.html#SERVICES">Flat Tyre</a>
+              <a href="readmore.html#SERVICES">Lockout </a>
+              <a href="readmore.html#SERVICES">Fuel Delivery</a>
+            </div>
+          </div>
+      </span>
+    </header>
+  
+    <div class="center">
+      <h1 style="font-family: candara;color:darkslateblue">SERVICE BOOKING</h1>
+      <div class="form">
+        <div class="txt_field">
+          <input type="email" id="mail" required>
+          <span></span>
+          <label>Email</label>
+        </div>
+       
+          <!-- <input type="text" id="location" required>
+          <span></span>-->
+          <label>Current Location</label> 
+          <select id="location" name="location"></select>
+        
+        <div class="txt_field">
+          <input type="text" id="high" required>
+          <span></span>
+          <label>Highway Name</label>
+        </div>
+        <div class="txt_field">
+          <input type="text" id="toll" required>
+          <span></span>
+          <label>Tolgate Number</label>
+        </div>
+        <div class="txt_field">
+          <input type="text" id="service" required>
+          <span></span>
+          <label>Service</label>
+        </div>
+        <input type="submit" onclick="service()" value="BOOK NOW">
+      </div>
+    </div>
+    <script>
+      
+        var firebaseConfig = {
+          apiKey: "AIzaSyBFT-2w7mDPUkoqtSVDjfc3GjOydDSTDsc",
+          authDomain: "highwayservices-3a4bb.firebaseapp.com",
+          projectId: "highwayservices-3a4bb",
+          storageBucket: "highwayservices-3a4bb.appspot.com",
+          messagingSenderId: "89877502779",
+          appId: "1:89877502779:web:afcc7a9f1df6efea00f51e",
+          measurementId: "G-1V9ZPXXVGZ"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        var auth=firebase.auth();
+        var firestore=firebase.firestore();
+
+        function select()
+        {
+                  firestore.collection('mechanic').get()
+                  .then((querySnapshot) => {
+                    
+                    querySnapshot.forEach((doc) => {
+                      const newOption = document.createElement('option');
+                      newOption.innerHTML=doc.data().Address;
+                      newOption.setAttribute('value',doc.data().Address);
+                      document.getElementById("location").appendChild(newOption);
+
+                    })})
+          
+        }
+
+
+        function service()
+      {
+        mail=document.getElementById("mail").value;
+        loc=document.getElementById("location").value;
+        high_num=document.getElementById("high").value;
+        toll=document.getElementById("toll").value;
+        ser=document.getElementById("service").value;
+        firestore.collection('users').doc(mail).get()
+        .then((doc) => {
+            if (doc.exists)
+            {
+              console.log(doc);
+              services=[loc,high_num,toll,ser];
+              firestore.collection('users').doc(mail).update({
+                ServicesRequested : services 
+              })
+              .then((doc)=>{
+                firestore.collection('services').doc(mail).set({
+                  ServicesRequested :services
+                })
+                .then((doc)=>{
+                  firestore.collection('mechanic').get()
+                  .then((querySnapshot) => {
+                    
+                    querySnapshot.forEach((doc) => {
+                  if(doc.data().Address==loc)
+                  {
+                    s="The mechanic name is"+doc.data().Name+" and his phone number is "+doc.data().Mobile;
+                    alert("Service request placed successfully."+s);
+                    window.open("./home.html","_self");
+                  }
+      
+                    })
+                  })
+                  
+                })
+              })
+
+            }
+            else
+            {
+              alert("E-Mail not registered. Please Register first");
+              window.open("./userregister.html","_self");
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+
+      }
+    </script>
+    </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HIGHWAY SERVICES</title>
+    <link rel="stylesheet" href="cssfile.css">
+	<link rel="stylesheet" href="flexbox.css">
+	<link rel="stylesheet" href="flexbox2.css">
+	<link rel="stylesheet" href="dropdown.css">
+	<link rel = "icon" href = "img\HSicon6.jpg" type = "image/x-icon">
+	<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+</head>
+<body style="height: 800px;">
+	<header>
+		<div id="logo">
+			<a href="home.html">HIGHWAY<span id="logo-s">SERVICES</span></a>
+		</div>
+		<span class="sign"><a href="home2.html">HOME</a></span>
+        <span class="sign">
+			<div class="dropdown">
+				<a href="readmore.html#SERVICES">
+					<button class="dropbtn">SERVICES</button></a>
+					<div class="dropdown-content">
+						<a href="readmore.html#SERVICES">Towing</a>
+						<a href="readmore.html#SERVICES">Jump Start</a>
+						<a href="readmore.html#SERVICES">Flat Tyre</a>
+						<a href="readmore.html#SERVICES">Lockout </a>
+						<a href="readmore.html#SERVICES">Fuel Delivery</a>
+					</div>
+			  </div>
+		</span>
+	</header>
+    <div class="slider">
+		<!-- fade css -->
+        <div class="myslide fade">
+			<div class="txt">
+				<h1>HIGHWAY SERVICES</h1><hr>
+				<p>Highway Services are services that assist motorists, or bicyclists, whose vehicles have suffered <br>
+				 a mechanical failure that leaves the operator stranded.<br>
+				And this is when Highway Services comes to your rescue. It offers direct towing service in the event of problems,<br> such as puncture, car running out of fuel and other emergency situations. 	
+			    <br><br><br><br><br>
+				<p align="center"> <a href="knowmore.html">Click here</a> to know more </p> 
+			</p>
+			</div>
+			<img src="img/winching_service6.jpg" style="width: 100%; height: 100%;">
+		</div>
+		<div class="myslide fade">
+			<div class="txt">
+				<h1>FUEL DELIVERY</h1><hr>
+				<p> Fuel delivery service is required when a vehicle runs out of gas while there is no nearby gas station.<br>
+					 A roadside professional can reach the spot and deliver enough gas to get the vehicle to the nearest gas station.
+					 <br><br><br><br><br>
+				<p align="center"> <a href="knowmore.html">Click here</a> to know more </p> 
+				</p>
+			</div>
+			<img src="img/fuel_services.jpg" style="width: 100%; height: 100%;">
+		</div>
+		<div class="myslide fade">
+			<div class="txt">
+				<h1>JUMP STARTS</h1><hr>
+				<p>What should you do when your vehicle battery dies and you need to jump start? <br>
+					If you are stuck in the middle of a road, move your vehicle to a safe location,
+					you can contact Highway Services<br> mechanics who provides emergency response and fix the issue.
+				    <br><br><br><br><br>
+				<p align="center"> <a href="knowmore.html">Click here</a> to know more </p> 
+				</p>
+			</div>
+			<img src="img/jump_starts4.jpg" style="width: 100%; height: 100%;">
+		</div>
+		<div class="myslide fade">
+			<div class="txt">
+				<h1>TIRE CHANGES</h1><hr>
+				<p style="color:lightblue">  Flat tire is another common problem that can be fixed without any professional assistance.<br>
+					 However, if you don’t have the knowledge and tools to change the tire, you had better call Highway Service <br>and get instant help.
+					 <br><br><br><br><br>
+				<p align="center"> <a href="knowmore.html">Click here</a> to know more </p> 
+				</p>
+			</div>
+			<img src="img/tirechanges.jpg" style="width: 100%; height: 100%;">
+		</div>
+		
+		<div class="myslide fade">
+			<div class="txt">
+				<h1>LOCKOUT </h1><hr>
+				<p>The situation can really ruin a beautiful day when you cannot unlock your car for some reason. <br>
+					The quick solution is to call a lockout service, it is one the types of Highway Service. A roadside professional <br>
+					should have the expertise and tools to unlock a door.<br>
+					<br><br><br><br><br>
+				<p align="center"> <a href="knowmore.html">Click here</a> to know more </p> 
+				</p>
+			</div>
+			<img src="img/lockout_services2.jpg" style="width: 100%; height: 100%;">
+		</div>
+
+		<!-- /fade css -->
+		
+		<!-- onclick js -->
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		
+		<div class="dotsbox" style="text-align:center">
+			<span class="dot" onclick="currentSlide(1)"></span>
+			<span class="dot" onclick="currentSlide(2)"></span>
+			<span class="dot" onclick="currentSlide(3)"></span>
+			<span class="dot" onclick="currentSlide(4)"></span>
+			<span class="dot" onclick="currentSlide(5)"></span>
+		</div>
+		<!-- /onclick js -->
+	</div>
+
+<script src="jsfile.js"></script>
+
+
+
+
+</body>
+</html>
+
+

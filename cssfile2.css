@@ -1,0 +1,163 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+header{
+    height: 60px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+	z-index: 2;
+}
+#logo{
+    line-height: 60px;
+    margin-left: 15px;
+    display: inline-block;
+	cursor: pointer;
+	font-size: 35px;
+	font-weight: bold;
+	color: #00a7ff; /* blue */
+}
+#logo:hover{
+    color: #eef9ff; /* white */
+}
+#logo-s{
+	color: #eef9ff; /* white */
+	margin-left: 5px;
+}
+#logo:hover #logo-s{
+	color: #00a7ff; /* blue */
+}
+.sign{
+	float: right;
+	line-height: 60px;
+	margin-right: 40px;
+}
+.sign a{
+	color:blueviolet;
+	font-weight: bold;
+	font-family:candara;
+	text-decoration: none;
+    display: inline-block;
+	font-size: 20px;
+}
+a {
+	color:blueviolet;
+	font-weight: bold;
+	font-family:candara;
+	text-decoration: none;
+    display: inline-block;
+	font-size: 20px;
+}
+
+.sign a:hover{
+	color: #00a7ff; /* blue */
+	border-color: #00a7ff; /* blue */
+}
+
+
+.txt{
+	position: absolute;
+	color: #fff;
+	letter-spacing: 2px;
+	line-height: 35px;
+	top: 40%;
+	left: 15%;
+	-webkit-animation-name: posi;
+  	-webkit-animation-duration: 2s;
+  	animation-name: posi;
+  	animation-duration: 2s;
+	z-index: 1;
+}
+.txt h1{
+	color: #00a7ff; /* blue */
+	font-size: 50px;
+	margin-bottom: 20px;
+	font-family:Candara;
+}
+.txt p{
+	font-weight:bold;
+	font-style: italic;
+	font-size: 25px;
+	font-family:candara;
+	color:whitesmoke; 
+}
+@media screen and (max-width: 800px){
+	.txt{
+		letter-spacing: 2px;
+		line-height: 25px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		-webkit-animation-name: posi2;
+		-webkit-animation-duration: 2s;
+		animation-name: posi2;
+		animation-duration: 2s;
+	}
+	.txt h1{
+		font-size: 40px;
+	}
+	.txt p{
+		font-size: 13px;
+	}
+}
+@media screen and (max-width: 520px){
+	.txt h1{
+		font-size: 30px;
+		margin-bottom: 20px;
+	}
+	.sign{
+		margin-right: 20px;
+	}
+	.sign a{
+		font-size: 12px;
+	}
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 70px;
+  width: 1950px;
+  height:850px;
+}
+.center1 {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 70px;
+	width: 1250px;
+	height:850px;
+  }
+
+
+  .text-block {
+	position: absolute;
+	bottom: 400px;
+	right: 150px;
+	background:transparent;
+	color:white;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-family:candara;
+  }
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
